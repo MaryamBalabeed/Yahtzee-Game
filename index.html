@@ -1,0 +1,656 @@
+<html>
+<header>
+    <title>
+        Yahtzee Game
+    </title>
+    <link rel="stylesheet" href="style.css">
+</header>
+
+<body>
+   
+<!-- The Modal -->
+ <div id="myModal" class="modal">
+
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p><h3>How to Play Yahtzee: </h3>
+        <p>At the start of a turn, the player takes all 5 dice and rolls them. They can then roll some or all 
+        of the dice up to three times, thery can set aside any dice they’d like to keep and rerolling the rest.</p>
+        
+        <p>After rolling the dice they need to score rolls, and scoring the dice ends the player’s turn.</p>
+        
+        To score the dice, the player selects one of the categories on the score card and writes the score
+        into it. Once a category is filled it may not be changed. 
+
+        <h4>The categories on the score card are divided into two sections. The categories in the <span class="gameRules">Upper Section</span> are:-
+        </h4>
+        <ol>
+            <li> <span class="gameRules"> Ones:</span> Receive 1 point for each 1 rolled.</li>
+            <li> <span class="gameRules"> Twos:</span> Receive 2 points for each 2 rolled.</li>
+            <li> <span class="gameRules"> Threes:</span> Receive 3 points for each 3 rolled.</li>
+            <li> <span class="gameRules"> Fours:</span> Receive 4 points for each 4 rolled.</li>
+            <li> <span class="gameRules"> Fives:</span> Receive 5 points for each 5 rolled.</li>
+            <li> <span class="gameRules"> Sixes:</span> Receive 6 points for each 6 rolled.</li>
+        </ol>
+        
+        
+       <h4> The categories in the <span class="gameRules2">Lower Section</span> are:- </h4> 
+       <ol>
+        <li> <span class="gameRules2">Three of a Kind:</span> Three dice of the same number Receive sum of the three rolls.</li>
+        <li> <span class="gameRules2">Four of a Kind:</span> Four dice of the same number Receive sum of the four rolls.</li>
+        <li> <span class="gameRules2">Full House:</span> Three dice showing the same number, and two dice showing another number Receive 25 point.</li>
+        <li> <span class="gameRules2">Small Straight:</span> Any four consecutive numbers Receive 30 point.</li>
+        <li> <span class="gameRules2">Large Straight:</span> Any five consecutive numbers Receive 40 point.</li>
+        <li> <span class="gameRules2">Yahtzee:</span> All 5 dice showing the same number Receive 50 point.</li>
+        <li> <span class="gameRules2">Chance:</span> Any combination of dice Receive sum of all the spots on all the dice.</li>
+    </ol>
+         </p>
+  </div>
+
+</div> 
+
+ 
+<div class="bodystyle">
+    <div class="wrapper">
+        <button id="roll" class="button1">click to roll the dice</button>
+        <div class="wrapper2">
+            <section class="containter">
+                <div id="player1" class="cube notsave">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+            <section class="containter">
+                <div id="player1" class="cube notsave">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+            <section class="containter">
+                <div id="player1" class="cube notsave">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+            <section class="containter">
+                <div id="player1" class="cube notsave">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+            <section class="containter">
+                <div id="player1" class="cube notsave">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <button id="roll2" class="button2">click to roll the dice</button>
+        <div class="wrapper3">
+            <section class="containter">
+                <div id="player2" class="cube">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+            <section class="containter">
+                <div id="player2" class="cube">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+            <section class="containter">
+                <div id="player2" class="cube">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+            <section class="containter">
+                <div id="player2" class="cube">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+            <section class="containter">
+                <div id="player2" class="cube">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+     <div>     
+  <table id="scorTable">
+        <tr>
+            <th>
+                upper section
+            </th>
+            <td>
+                player1
+            </td>
+            <td>
+                player2
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ones
+            </td>
+            <td id="ones">
+                
+            </td>
+            <td id="ones2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tows
+            </td>
+            <td id="twos">
+                
+            </td>
+            <td id="twos2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Threes
+            </td>
+            <td id="threes">
+                
+            </td>
+            <td id="threes2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fours
+            </td>
+            <td id="fours">
+                
+            </td>
+            <td id="fours2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fives
+            </td>
+            <td id="fives">
+                
+            </td>
+            <td id="fives2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Sixes
+            </td>
+            <td id="sixes">
+                
+            </td>
+            <td id="sixes2">
+                
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Sum
+            </th>
+            <td id="sum">
+                
+            </td>
+            <td id="sum2">
+                
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Bonus
+            </th>
+            <td id="bonus">
+                
+            </td>
+            <td id="bonus2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Three of a Kind
+            </td>
+            <td id="ThreeKind">
+                
+            </td>
+            <td id="ThreeKind2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Four of a Kind
+            </td>
+            <td id="FourKind">
+                
+            </td>
+            <td id="FourKind2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Full House
+            </td>
+            <td id="FullHouse">
+                
+            </td>
+            <td id="FullHouse2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Small Straight
+            </td>
+            <td id="smallST">
+                
+            </td>
+            <td id="smallST2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Large Straight
+            </td>
+            <td id="largST">
+                
+            </td>
+            <td id="largST2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Chance
+            </td>
+            <td id="chance">
+                
+            </td>
+            <td id="chance2">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Yahtzee
+            </td>
+            <td id="yahtzee">
+                
+            </td>
+            <td id="yahtzee2">
+                
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Total Score
+            </th>
+            <td id="totalSC">
+                
+            </td>
+            <td id="totalSC2">
+                
+            </td>
+        </tr>
+
+
+    </table>
+    <div class="finishButton">
+        <button id="finishedGame" class="button3" > Finished</button>
+        <div id="winnerText">
+            <h2 >congratulations !!</h2>
+            <h3 > <span id="winner"></span> is the winner</h3>
+        </div>
+        
+    </div>
+</div> 
+
+</div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script> <!-- linking to jQuery file -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>

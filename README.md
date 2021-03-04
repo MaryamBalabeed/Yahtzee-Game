@@ -55,7 +55,8 @@ To score the dice, the player selects one of the categories on the score card an
 ![](images/ezgif.com-gif-maker.gif) 
 
 
-
+# Game deployment link
+https://pages.git.generalassemb.ly/MaryamBalabeed/Project-1/
 
 
 
